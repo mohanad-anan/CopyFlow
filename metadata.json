@@ -1,5 +1,5 @@
 {
-  "name": "QuickSnippets",
+  "name": "CopyFlow",
   "description": "A lightweight Chrome Extension for saving, organizing, searching, and copying frequently used text snippets.",
   "requestFramePermissions": []
 }

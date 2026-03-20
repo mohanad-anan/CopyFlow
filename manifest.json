@@ -1,10 +1,14 @@
 {
   "manifest_version": 3,
-  "name": "QuickSnippets",
+  "name": "CopyFlow",
   "version": "1.0",
   "description": "Save, organize, search, and copy frequently used text snippets.",
   "permissions": ["storage"],
+  "icons": {
+    "128": "icon.png"
+  },
   "action": {
-    "default_popup": "popup.html"
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
   }
 }
