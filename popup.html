@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickSnippets</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-top">
+                <h1>QuickSnippets</h1>
+                <button id="closeBtn" class="action-btn" title="Close">✕</button>
+            </div>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search snippets...">
+            </div>
+        </header>
+
+        <nav id="breadcrumbs" class="breadcrumbs">
+            <div id="backBtn" class="back-btn hidden">
+                <span class="icon">←</span> Back
+            </div>
+            <div class="breadcrumb-path">
+                <span id="homeBtn" class="breadcrumb-item active">Folders</span>
+                <span id="folderName" class="breadcrumb-item hidden"></span>
+            </div>
+        </nav>
+
+        <main id="content">
+            <!-- Content will be dynamically injected here -->
+            <div id="listView" class="list-view"></div>
+        </main>
+
+        <footer>
+            <button id="addBtn" class="primary-btn">
+                <span class="icon">+</span> Add Folder
+            </button>
+        </footer>
+    </div>
+
+    <!-- Modals -->
+    <div id="modalOverlay" class="modal-overlay hidden">
+        <div class="modal">
+            <h2 id="modalTitle">Add Folder</h2>
+            <div class="form-group">
+                <label for="itemName">Title</label>
+                <input type="text" id="itemName" placeholder="Enter title...">
+            </div>
+            <div id="snippetContentGroup" class="form-group hidden">
+                <label for="itemContent">Content</label>
+                <textarea id="itemContent" rows="5" placeholder="Enter snippet content..."></textarea>
+            </div>
+            <div class="modal-actions">
+                <button id="cancelBtn" class="secondary-btn">Cancel</button>
+                <button id="saveBtn" class="primary-btn">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast hidden">Copied!</div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

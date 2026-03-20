@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickSnippets Preview</title>
+    <link rel="stylesheet" href="popup.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: #e2e8f0;
+        }
+        .extension-frame {
+            background: white;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+        .extension-header-bar {
+            background: #1e293b;
+            color: white;
+            padding: 8px 16px;
+            font-size: 12px;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="extension-frame">
+        <div class="extension-header-bar">
+            <span>QuickSnippets Extension Preview</span>
+            <span style="opacity: 0.6">440x640</span>
+        </div>
+        <div class="app-container">
+            <header>
+                <div class="header-top">
+                    <h1>QuickSnippets</h1>
+                    <button id="closeBtn" class="action-btn" title="Close">✕</button>
+                </div>
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search snippets...">
+                </div>
+            </header>
+
+            <nav id="breadcrumbs" class="breadcrumbs">
+                <div id="backBtn" class="back-btn hidden">
+                    <span class="icon">←</span> Back
+                </div>
+                <div class="breadcrumb-path">
+                    <span id="homeBtn" class="breadcrumb-item active">Folders</span>
+                    <span id="folderName" class="breadcrumb-item hidden"></span>
+                </div>
+            </nav>
+
+            <main id="content">
+                <div id="listView" class="list-view"></div>
+            </main>
+
+            <footer>
+                <button id="addBtn" class="primary-btn">
+                    <span class="icon">+</span> Add Folder
+                </button>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="modalOverlay" class="modal-overlay hidden">
+        <div class="modal">
+            <h2 id="modalTitle">Add Folder</h2>
+            <div class="form-group">
+                <label for="itemName">Title</label>
+                <input type="text" id="itemName" placeholder="Enter title...">
+            </div>
+            <div id="snippetContentGroup" class="form-group hidden">
+                <label for="itemContent">Content</label>
+                <textarea id="itemContent" rows="5" placeholder="Enter snippet content..."></textarea>
+            </div>
+            <div class="modal-actions">
+                <button id="cancelBtn" class="secondary-btn">Cancel</button>
+                <button id="saveBtn" class="primary-btn">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast hidden">Copied!</div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
+

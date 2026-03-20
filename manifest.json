@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "QuickSnippets",
+  "version": "1.0",
+  "description": "Save, organize, search, and copy frequently used text snippets.",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
